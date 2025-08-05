@@ -35,8 +35,6 @@ const CardTitle = styled.h1<{ titleColor?: string; size?: 'small' | 'medium' | '
 
 const CardContent = styled.div`
   padding: 1rem 0;
-  
-  /* ✅ Safe: These styles only affect this specific container */
   p {
     color: #666;
     line-height: 1.6;
@@ -78,9 +76,6 @@ interface MyComponentProps {
   primaryAction?: string;
   secondaryAction?: string;
   content: Slot;
-  _styleOverrides?: {
-    style?: string;
-  };
 }
 
 export function Render({content: Content, ...props}: RenderProps<MyComponentProps>) {
@@ -135,19 +130,6 @@ export const config: ComponentConfig<MyComponentProps> = {
       ],
       default: 'medium'
     },
-    _styleOverrides: {
-          type: 'object',
-          label: 'Style Overrides',
-          description: 'Provide css updates to override the default styles of this component',
-          objectFields: {
-            style: {
-              type: 'code',
-              label: 'CSS Styles',
-              description: 'Provide CSS styles to override the default styles of this component',
-              default: '',
-            },
-          },
-        },
     content: {
       type: 'slot',
     },
