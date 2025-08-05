@@ -1,0 +1,21 @@
+{
+  "name": "@hakit/weather-components",
+  "version": "0.0.0",
+  "description": "A collection of weather components for HAKIT",
+  "type": "module",
+  "scripts": {
+    "dev": "npx --package=@hakit/addon hakit-dev",
+    "type-check": "tsc --noEmit",
+    "build": "npm run type-check && npx --package=@hakit/addon hakit-bundle",
+    "create-component": "npx --package=@hakit/addon hakit-create-component"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@hakit/addon": "^0.0.12",
+    "@types/react": "^19.1.9",
+    "typescript": "^5.8.3"
+  }
+}
